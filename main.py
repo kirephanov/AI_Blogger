@@ -18,11 +18,21 @@ def index():
 
 
 @app.route("/create-post")
-def createPost():
+def create_post():
     global posts
     post = ''
+
     post_length = random.randint(5, 25)
     post += ' '.join(pg.generate_text(post_length))
     posts.insert(0, post)
+
+    return redirect('/')
+
+
+@app.route("/delete-posts")
+def delete_posts():
+    global posts
+
+    posts.clear()
 
     return redirect('/')
