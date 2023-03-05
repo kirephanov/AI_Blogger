@@ -4,7 +4,6 @@ import post_generator as pg
 
 app = Flask(__name__)
 
-titles = []
 posts = []
 
 
